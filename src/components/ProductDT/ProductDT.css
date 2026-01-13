@@ -1,0 +1,80 @@
+.product-dt-wrapper {
+    padding: 80px 0;
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .product-dt-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
+  
+  /* Sol Tərəf */
+  .dt-left { flex: 1.1; }
+  .main-img-holder {
+    background-color: #f6f6f6;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .main-img-holder img { width: 100%; max-height: 500px; object-fit: contain; }
+  
+  .thumb-list { display: flex; gap: 10px; margin-top: 20px; }
+  .thumb-list img {
+    width: 80px; height: 70px; object-fit: cover;
+    cursor: pointer; border: 1px solid transparent;
+  }
+  .thumb-list img.active { border-color: #ff8a65; }
+  
+  /* Sağ Tərəf */
+  .dt-right { flex: 1; text-align: left; }
+  .product-name { font-size: 32px; font-weight: 700; color: #222; margin-bottom: 10px; }
+  .product-price { font-size: 26px; color: #ff8a65; font-weight: 700; margin-bottom: 20px; }
+  
+  .product-info-meta p { font-size: 14px; color: #777; margin-bottom: 8px; }
+  .product-info-meta span { width: 100px; display: inline-block; color: #444; }
+  .product-info-meta .highlight { color: #ff8a65; width: auto; }
+  
+  .divider { height: 1px; background-color: #eee; margin: 25px 0; border-style: dotted none none; }
+  .product-description { font-size: 15px; color: #777; line-height: 1.8; margin-bottom: 30px; }
+  
+  /* Actions Section */
+  .product-actions { display: flex; align-items: center; gap: 15px; margin-bottom: 40px; }
+  
+  .quantity-selector {
+    border: 1px solid #eee;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+  }
+  .quantity-selector button { border: none; background: none; font-size: 20px; cursor: pointer; color: #888; }
+  .quantity-selector input { width: 30px; text-align: center; border: none; font-weight: bold; font-size: 16px; }
+  
+  .add-to-cart-btn {
+    background-color: #ff8a65;
+    color: white;
+    border: none;
+    padding: 15px 45px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 138, 101, 0.3);
+  }
+  
+  .wishlist-icon {
+    width: 50px; height: 50px; border-radius: 50%; border: 1px solid #eee;
+    background: white; color: #999; cursor: pointer; display: flex;
+    align-items: center; justify-content: center; font-size: 20px;
+  }
+  
+  /* Socials */
+  .social-links { display: flex; gap: 12px; }
+  .social-links a {
+    width: 40px; height: 40px; border-radius: 50%; color: white;
+    display: flex; align-items: center; justify-content: center; text-decoration: none;
+  }
+  .social-links .fb { background: #3b5998; }
+  .social-links .tw { background: #55acee; }
+  .social-links .li { background: #0077b5; }
