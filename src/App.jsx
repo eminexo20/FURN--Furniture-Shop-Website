@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Product from "./components/Product/Product";
 import Blog from "./components/Blog/Blog";
+import ScrollTop from "./components/ScrollTop/ScrollTop";
 import Contact from "./components/Contact/Contact";
 import Page from "./components/Page/Page";
 import Login from "./components/Login/Login";
@@ -37,10 +38,12 @@ function Layout() {
         <Route path="/product/:id" element={<ProductDT />} />
         <Route path="/card" element={<Card />} />
         <Route path="/catagories" element={<Catagories />} />
+        
       </Routes>
 
       {/* FOOTER-İ BURADA ÇAĞIRIRIQ */}
       {!isAccountPage && <Footer />}
+      <ScrollTop />
     </>
   );
 }

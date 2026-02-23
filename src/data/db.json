@@ -1,0 +1,130 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "title": "Bly Loveseat - White & Brown",
+        "price": 367,
+        "image": "/images/sofa-img1.jpg",
+        "category": "Sofa"
+      },
+      {
+        "id": "2",
+        "title": "Bly Loveseat - Orange",
+        "price": 367,
+        "image": "/images/sofa-img2.jpg",
+        "category": "Sofa"
+      },
+      {
+        "id": "3",
+        "title": "Bly Loveseat - Green",
+        "price": 367,
+        "image": "/images/sofa-img3.jpg",
+        "category": "Sofa"
+      },
+      {
+        "id": "4",
+        "title": "Modern Oak Table",
+        "price": 199,
+        "image": "/images/table-img1.jpg",
+        "category": "Table"
+      },
+      {
+        "id": "5",
+        "title": "Glass Dining Table",
+        "price": 249,
+        "image": "/images/table-img2.jpg",
+        "category": "Table"
+      },
+      {
+        "id": "6",
+        "title": "Round Coffee Table",
+        "price": 179,
+        "image": "/images/table-img3.jpg",
+        "category": "Table"
+      },
+      {
+        "id": "7",
+        "title": "Accent Chair - Blue",
+        "price": 89,
+        "image": "/images/chair-img1.jpg",
+        "category": "Chair"
+      },
+      {
+        "id": "8",
+        "title": "Accent Chair - Yellow",
+        "price": 89,
+        "image": "/images/chair-img2.jpg",
+        "category": "Chair"
+      },
+      {
+        "id": "9",
+        "title": "Accent Chair - Grey",
+        "price": 89,
+        "image": "/images/chair-img3.jpg",
+        "category": "Chair"
+      },
+      {
+        "id": "10",
+        "title": "Upholstered Queen Bed Frame",
+        "price": 450,
+        "image": "/images/bed-img1.jpg",
+        "category": "Bed"
+      },
+      {
+        "id": "11",
+        "title": "Minimalist Platform Bed",
+        "price": 399,
+        "image": "/images/bed-img2.jpg",
+        "category": "Bed"
+      },
+      {
+        "id": "12",
+        "title": "Modern Storage Bed",
+        "price": 499,
+        "image": "/images/bed-img3.jpg",
+        "category": "Bed"
+      },
+      {
+        "id": "13",
+        "title": "Nordic Floor Lamp",
+        "price": 120,
+        "image": "/images/light-img1.jpg",
+        "category": "Lighting"
+      },
+      {
+        "id": "14",
+        "title": "Industrial Pendant Light",
+        "price": 89,
+        "image": "/images/light-img2.jpg",
+        "category": "Lighting"
+      },
+      {
+        "id": "15",
+        "title": "LED Wall Sconce",
+        "price": 65,
+        "image": "/images/light-img3.jpg",
+        "category": "Lighting"
+      },
+      {
+        "id": "16",
+        "title": "Abstract Wall Decor Set",
+        "price": 60,
+        "image": "/images/decor-img1.jpg",
+        "category": "Decor"
+      },
+      {
+        "id": "17",
+        "title": "Boho Macrame Wall Hanging",
+        "price": 45,
+        "image": "/images/decor-img2.jpg",
+        "category": "Decor"
+      },
+      {
+        "id": "18",
+        "title": "Vintage Mirror Frame",
+        "price": 80,
+        "image": "/images/decor-img3.jpg",
+        "category": "Decor"
+      }
+    ]
+  }

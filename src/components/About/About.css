@@ -1,0 +1,230 @@
+.about-wrapper {
+    width: 100%;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Narıncı kvadratın yerləşməsi */
+  .top-brand-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 90px;
+    background-color: #ff8c5f; /* Narıncı rəng */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .inner-border {
+    width: 100px;
+    height: 100px;
+    border: 1.5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  .about-header {
+    position: relative;
+    height: 380px; /* Şəkildəki hündürlük */
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .hero-bg-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+  
+  /* ƏN VACİB HİSSƏ: Maili ağ örtük */
+  .hero-white-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 55%; /* Şəklin yarısından çoxunu tutur */
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding-left: 15%;
+    /* Bu funksiya şəkildəki maili (diaqonal) kəsimi yaradır */
+    clip-path: polygon(0 0, 100% 0, 82% 100%, 0% 100%);
+  }
+  
+  .hero-content h1 {
+    font-size: 55px;
+    font-weight: 900;
+    color: #333;
+    margin: 0;
+    letter-spacing: -1px;
+  }
+  
+  .breadcrumb {
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+  }
+  
+  .breadcrumb a {
+    text-decoration: none;
+    color: #999;
+  }
+  
+  /* Şəklin altındakı bej rəngli hissə */
+  .bottom-accent-bar {
+    width: 100%;
+    height: 100px;
+    background-color: #f2e8e1;
+    position: relative;
+    z-index: 0;
+    margin-top: -30px; /* Şəkildəki kimi hero hissəsi ilə birləşsin */
+  }
+  .story-section {
+    padding: 80px 10%;
+    background-color: #fff;
+   
+  }
+  /* Bu hissə bütün blokun çərçivəsidir */
+.story-section {
+    padding: 80px 10%;
+    background-color: #fff;
+  }
+  
+  /* ƏSAS BURADIR: Elementləri (mətn və şəkil) alt-alta gətirən kod */
+  .story-container {
+    display: flex;
+    flex-direction: column; /* Yan-yana deyil, alt-alta düz */
+    align-items: center;    /* Ortala */
+    text-align: center;     /* Mətni ortala */
+    gap: 40px;              /* Aradakı məsafə */
+  }
+  
+  /* Şəklin enini tənzimlə ki, bütün ekranı tutsun */
+  .sliced-image-container {
+    width: 100%;
+    max-width: 600px; /* Çox böyüməsin deyə limit qoy */
+  }
+  .story-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .story-text {
+    flex: 1;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #ff8c5f;
+  }
+  
+  /* Şəkil Konteyneri */
+  .sliced-image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Zolaqlar arasındakı boşluq */
+    padding: 20px;
+  }
+  
+  /* Hər bir dilim (zolaq) */
+  .image-slice {
+    width: 100%;
+    height: 45px;
+    background-size: 100% 500%; /* Şəkli hündürlüyə görə genişləndiririk */
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  /* Arxa plandakı dayaq xətləri */
+  .image-stand-left, .image-stand-right {
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background-color: #444; /* Tünd rəngli dayaqlar */
+    z-index: 1;
+  }
+  
+  .image-stand-left { left: 15%; }
+  .image-stand-right { right: 15%; }
+  .journey-section {
+    padding: 100px 15%;
+    background-color: #fff;
+    text-align: center; /* Hər şeyi mərkəzləşdirir */
+  }
+  
+  .journey-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .journey-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #000;
+  }
+  
+  .journey-desc {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  /* Şəkil Dilimləri */
+  .journey-image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Dilimlər arasındakı ağ boşluq */
+    margin: 40px auto;
+    width: 100%;
+    max-width: 700px;
+  }
+  
+  .journey-slice {
+    width: 100%;
+    height: 80px; /* Hər dilimin hündürlüyü */
+    background-size: 100% 400%; /* 4 dilim olduğu üçün hündürlük 400% */
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+  }
+  
+  .journey-slice:hover {
+    transform: scale(1.02); /* Üstünə gələndə kiçik effekt */
+  }
+  
+  .journey-year {
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .journey-footer {
+    margin-top: 20px;
+  }
+  

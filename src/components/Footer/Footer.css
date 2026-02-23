@@ -1,146 +1,205 @@
 .footer-wrapper {
-    width: 100%;
-    font-family: sans-serif;
-  }
-  
-  /* Xidmətlər bölməsi */
+  width: 100%;
+  font-family: sans-serif;
+}
+
+/* Xidmətlər bölməsi */
+.services-section {
+  background-color: #f3e9e1;
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 10%;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.service-icon {
+  font-size: 45px;
+  color: #1a233a;
+  margin-bottom: 20px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  flex: 1;
+  min-width: 200px;
+  margin: 20px 0;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+.service-item h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+}
+
+.service-item p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Əsas Footer */
+.main-footer {
+  background-color: #1a233a;
+  color: #ffffff;
+  padding: 80px 10% 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-brand {
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 40px;
+}
+
+/* Loqo dizaynı */
+.footer-logo {
+  border: 1px solid #ff8a6c;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  color: #ff8a6c;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.footer-brand p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #adb5bd;
+  margin-bottom: 25px;
+  max-width: 350px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ffffff44;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  border-color: #ff8a6c;
+  color: #ff8a6c;
+}
+
+/* Linklər bölməsi */
+.footer-links-group {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  min-width: 400px;
+  gap: 40px;
+}
+
+.link-column h4 {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+.link-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.link-column ul li {
+  margin-bottom: 12px;
+}
+
+.link-column ul li a {
+  text-decoration: none;
+  color: #adb5bd;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.link-column ul li a:hover {
+  color: #ff8a6c;
+}
+
+/* === Responsive === */
+
+/* Tablet */
+@media (max-width: 1024px) {
   .services-section {
-    background-color: #f3e9e1; /* Bej rəng */
-    display: flex;
-    justify-content: space-around;
-    padding: 60px 10%;
+    padding: 40px 5%;
+    gap: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
-  
-  .service-item img {
-    width: 50px;
+
+  .footer-links-group {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Telefon */
+@media (max-width: 548px) {
+  .services-section {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .service-item {
+    margin: 15px 0;
+  }
+
+  .main-footer {
+    padding: 40px 20px;
+  }
+
+  .footer-logo {
+    margin: 0 auto 20px;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-links-group {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .link-column h4 {
     margin-bottom: 15px;
   }
-  
-  .service-item h4 {
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: #1a1a1a;
-  }
-  
-  .service-item p {
-    font-size: 14px;
-    color: #777;
-  }
-  
-  /* Əsas Footer */
-  .main-footer {
-    background-color: #1a233a; /* Tünd göy rəng */
-    color: #ffffff;
-    padding: 80px 10% 40px;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .footer-brand {
-    flex: 1;
-    min-width: 300px;
-    margin-bottom: 40px;
-  }
-  
-  /* Loqo dizaynı */
-  .footer-logo {
-    border: 1px solid #ff8a6c;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
-    color: #ff8a6c;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-  
-  .footer-brand p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #adb5bd;
-    margin-bottom: 25px;
-    max-width: 350px;
-  }
-  
-  .social-links {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .social-links a {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #ffffff44;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    transition: 0.3s;
-  }
-  
-  .social-links a:hover {
-    border-color: #ff8a6c;
-    color: #ff8a6c;
-  }
-  
-  /* Linklər bölməsi */
-  .footer-links-group {
-    flex: 2;
-    display: flex;
-    justify-content: space-between;
-    min-width: 400px;
-  }
-  
-  .link-column h4 {
-    font-size: 18px;
-    margin-bottom: 25px;
-    color: #ffffff;
-  }
-  
-  .link-column ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .link-column ul li {
-    margin-bottom: 12px;
-  }
-  
-  .link-column ul li a {
-    text-decoration: none;
-    color: #adb5bd;
-    font-size: 14px;
-    transition: 0.3s;
-  }
-  
-  .link-column ul li a:hover {
-    color: #ff8a6c;
-  }
-  /* İkonların dizaynı */
-.service-icon {
-    font-size: 45px; /* Ölçüsü böyütdük */
-    color: #1a233a; /* Tünd rəng */
-    margin-bottom: 20px;
-  }
-  
-  .service-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .service-item:hover {
-    transform: translateY(-5px); /* Kiçik hərəkət effekti */
-  }
-  
-  /* Digər köhnə CSS kodların olduğu kimi qalır */
+}

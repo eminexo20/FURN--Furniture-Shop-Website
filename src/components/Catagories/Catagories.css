@@ -1,0 +1,255 @@
+.shop {
+    padding: 48px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .shop__header {
+    margin-bottom: 32px;
+  }
+  
+  .shop__header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  
+  .shop__header p {
+    font-size: 13px;
+    color: #999;
+  }
+  
+  .shop__body {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  
+  /* SIDEBAR */
+  .shop__sidebar {
+    width: 180px;
+    flex-shrink: 0;
+  }
+  
+  .sidebar__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .sidebar__section {
+    margin-bottom: 28px;
+  }
+  
+  .sidebar__label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .sidebar__cat-btn {
+    background: none;
+    border: 1px solid #e0e0e0;
+    padding: 7px 14px;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+  }
+  
+  .sidebar__cat-btn:hover {
+    border-color: #f97316;
+    color: #f97316;
+  }
+  
+  .sidebar__cat-btn.active {
+    background-color: #f97316;
+    border-color: #f97316;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .sidebar__range {
+    width: 100%;
+    accent-color: #f97316;
+    cursor: pointer;
+    margin-bottom: 8px;
+  }
+  
+  .sidebar__price-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #555;
+  }
+  
+  .sidebar__reset {
+    width: 100%;
+    padding: 9px;
+    background: none;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .sidebar__reset:hover {
+    border-color: #f97316;
+    color: #f97316;
+  }
+  
+  /* MAIN */
+  .shop__main {
+    flex: 1;
+  }
+  
+  .shop__topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  
+  .shop__count {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .shop__sort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .shop__sort select {
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    background: #fff;
+  }
+  
+  .shop__sort select:focus {
+    border-color: #f97316;
+  }
+  
+  /* GRID */
+  .shop__grid {
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  
+  /* CARD */
+  .shop__card {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #f0f0f0;
+    transition: box-shadow 0.25s;
+    display: block;
+  }
+  
+  .shop__card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  
+  .shop__card-img {
+    height: 220px;
+    overflow: hidden;
+    background: #f9f6f3;
+  }
+  
+  .shop__card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+  
+  .shop__card:hover .shop__card-img img {
+    transform: scale(1.05);
+  }
+  
+  .shop__card-info {
+    padding: 14px 16px 18px;
+  }
+  
+  .shop__card-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .shop__card-price {
+    font-size: 17px;
+    font-weight: 700;
+    color: #f97316;
+  }
+  
+  /* BROWSE MORE */
+  .shop__more {
+    text-align: center;
+    margin-top: 48px;
+  }
+  
+  .shop__more-btn {
+    background: none;
+    border: 2px solid #f97316;
+    color: #f97316;
+    padding: 12px 40px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .shop__more-btn:hover {
+    background: #f97316;
+    color: #fff;
+  }
+  
+  .shop__loading,
+  .shop__empty {
+    text-align: center;
+    color: #999;
+    padding: 80px 0;
+  }
+  
+  @media (max-width: 900px) {
+    .shop__body { flex-direction: column; }
+    .shop__sidebar { width: 100%; }
+    .sidebar__categories { flex-direction: row; flex-wrap: wrap; }
+    .shop__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 500px) {
+    .shop { padding: 24px 16px; }
+    .shop__grid { grid-template-columns: 1fr; padding-left: 40px;}
+  }
+  

@@ -31,7 +31,7 @@ export default function Navbar() {
             <li><Link to="/catagories" onClick={() => setIsOpen(false)}>Categories</Link></li>
           </ul>
         </li>
-
+        <li><Link to="/blog" onClick={() => setIsOpen(false)}>Blog</Link></li>
         <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
       </ul>
 

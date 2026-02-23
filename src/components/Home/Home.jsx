@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:5000/products");
+        const response = await fetch("/api/products"); // ← əsas dəyişiklik
         if (!response.ok) throw new Error("Database tapılmadı!");
         const data = await response.json();
         setDbProducts(data);
@@ -23,15 +23,15 @@ export default function Home() {
         setLoading(false);
       }
     };
+  
     fetchProducts();
-
+  
     AOS.init({
       duration: 1000,
       once: true,
       offset: 200
     });
   }, []);
-
   // Popular Products üçün filtr
   const filteredProducts = dbProducts.filter(
     (item) => item.category === activeCategory
@@ -95,9 +95,9 @@ export default function Home() {
         </div>
         <div className="hero-content">
           <div className="content-inner">
-            <h3>BEST MEBEL İSTEHSALÇISI</h3>
+            <h3>BEST FURNITURE MANUFACTURER</h3>
             <p>Suspendisse varius enim in eros elementum tristique.</p>
-            <Link to="/about" className="cta-button">ƏTRAFLI</Link>
+            <Link to="/about" className="cta-button">MORE</Link>
           </div>
         </div>
       </section>
