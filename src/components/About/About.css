@@ -1,230 +1,119 @@
-.about-wrapper {
-    width: 100%;
-    position: relative;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Narıncı kvadratın yerləşməsi */
-  .top-brand-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 110px;
-    height: 90px;
-    background-color: #ff8c5f; /* Narıncı rəng */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-  }
-  
-  .inner-border {
-    width: 100px;
-    height: 100px;
-    border: 1.5px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-  
-  .about-header {
-    position: relative;
-    height: 380px; /* Şəkildəki hündürlük */
-    display: flex;
-    overflow: hidden;
-  }
-  
-  .hero-bg-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-  }
-  
-  /* ƏN VACİB HİSSƏ: Maili ağ örtük */
-  .hero-white-overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 55%; /* Şəklin yarısından çoxunu tutur */
-    height: 100%;
-    background-color: white;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    padding-left: 15%;
-    /* Bu funksiya şəkildəki maili (diaqonal) kəsimi yaradır */
-    clip-path: polygon(0 0, 100% 0, 82% 100%, 0% 100%);
-  }
-  
-  .hero-content h1 {
-    font-size: 55px;
-    font-weight: 900;
-    color: #333;
-    margin: 0;
-    letter-spacing: -1px;
-  }
-  
-  .breadcrumb {
-    font-size: 14px;
-    color: #999;
-    margin-top: 5px;
-  }
-  
-  .breadcrumb a {
-    text-decoration: none;
-    color: #999;
-  }
-  
-  /* Şəklin altındakı bej rəngli hissə */
-  .bottom-accent-bar {
-    width: 100%;
-    height: 100px;
-    background-color: #f2e8e1;
-    position: relative;
-    z-index: 0;
-    margin-top: -30px; /* Şəkildəki kimi hero hissəsi ilə birləşsin */
-  }
-  .story-section {
-    padding: 80px 10%;
-    background-color: #fff;
-   
-  }
-  /* Bu hissə bütün blokun çərçivəsidir */
-.story-section {
-    padding: 80px 10%;
-    background-color: #fff;
-  }
-  
-  /* ƏSAS BURADIR: Elementləri (mətn və şəkil) alt-alta gətirən kod */
-  .story-container {
-    display: flex;
-    flex-direction: column; /* Yan-yana deyil, alt-alta düz */
-    align-items: center;    /* Ortala */
-    text-align: center;     /* Mətni ortala */
-    gap: 40px;              /* Aradakı məsafə */
-  }
-  
-  /* Şəklin enini tənzimlə ki, bütün ekranı tutsun */
-  .sliced-image-container {
-    width: 100%;
-    max-width: 600px; /* Çox böyüməsin deyə limit qoy */
-  }
-  .story-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-  }
-  
-  .story-text {
-    flex: 1;
-  }
-  
-  .section-title {
-    font-size: 32px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    color: #ff8c5f;
-  }
-  
-  /* Şəkil Konteyneri */
-  .sliced-image-container {
-    flex: 1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Zolaqlar arasındakı boşluq */
-    padding: 20px;
-  }
-  
-  /* Hər bir dilim (zolaq) */
-  .image-slice {
-    width: 100%;
-    height: 45px;
-    background-size: 100% 500%; /* Şəkli hündürlüyə görə genişləndiririk */
-    background-repeat: no-repeat;
-    border-radius: 4px;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-  
-  /* Arxa plandakı dayaq xətləri */
-  .image-stand-left, .image-stand-right {
-    position: absolute;
-    top: 0;
-    width: 8px;
-    height: 100%;
-    background-color: #444; /* Tünd rəngli dayaqlar */
-    z-index: 1;
-  }
-  
-  .image-stand-left { left: 15%; }
-  .image-stand-right { right: 15%; }
-  .journey-section {
-    padding: 100px 15%;
-    background-color: #fff;
-    text-align: center; /* Hər şeyi mərkəzləşdirir */
-  }
-  
-  .journey-content {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .journey-title {
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #000;
-  }
-  
-  .journey-desc {
-    font-size: 15px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 30px;
-  }
-  
-  /* Şəkil Dilimləri */
-  .journey-image-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Dilimlər arasındakı ağ boşluq */
-    margin: 40px auto;
-    width: 100%;
-    max-width: 700px;
-  }
-  
-  .journey-slice {
-    width: 100%;
-    height: 80px; /* Hər dilimin hündürlüyü */
-    background-size: 100% 400%; /* 4 dilim olduğu üçün hündürlük 400% */
-    background-repeat: no-repeat;
-    transition: transform 0.3s ease;
-  }
-  
-  .journey-slice:hover {
-    transform: scale(1.02); /* Üstünə gələndə kiçik effekt */
-  }
-  
-  .journey-year {
-    font-size: 32px;
-    font-weight: 800;
-    margin-top: 40px;
-    margin-bottom: 15px;
-  }
-  
-  .journey-footer {
-    margin-top: 20px;
-  }
-  
+:root {
+  --primary-color: #ff8c5f;
+  --bg-accent: #f2e8e1;
+  --text-dark: #1a1a1a;
+  --text-gray: #666;
+}
+
+.about-page { overflow-x: hidden; width: 100%; }
+
+/* --- Hero Section --- */
+.about-wrapper { position: relative; width: 100%; }
+
+.top-brand-box {
+  position: absolute; top: 0; left: 5%;
+  width: 110px; height: 110px;
+  background-color: var(--primary-color);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+}
+
+.inner-border {
+  width: 90px; height: 90px;
+  border: 1.5px solid white;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: bold; letter-spacing: 2px;
+}
+
+.about-header { position: relative; height: 450px; display: flex; }
+
+.hero-bg-image {
+  position: absolute; top: 0; right: 0;
+  width: 100%; height: 100%;
+  background-size: cover; background-position: center;
+}
+
+.hero-white-overlay {
+  position: absolute; left: 0; top: 0;
+  width: 55%; height: 100%;
+  background-color: white; z-index: 2;
+  display: flex; align-items: center; padding-left: 10%;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+.hero-content h1 { font-size: clamp(40px, 8vw, 65px); font-weight: 900; color: var(--text-dark); margin: 0; }
+.breadcrumb { font-size: 14px; color: #999; margin-top: 10px; }
+.breadcrumb a { text-decoration: none; color: inherit; }
+
+.bottom-accent-bar {
+  width: 100%; height: 80px;
+  background-color: var(--bg-accent);
+  margin-top: -30px; position: relative; z-index: 1;
+}
+
+/* --- Layouts --- */
+.container-custom {
+  display: flex; align-items: center; gap: 60px;
+  padding: 100px 10%; max-width: 1300px; margin: 0 auto;
+}
+
+.reverse-layout { flex-direction: row-reverse; }
+
+.story-text, .mission-text { flex: 1; }
+.section-title { font-size: 38px; font-weight: 800; color: var(--text-dark); }
+.title-underline { width: 60px; height: 4px; background: var(--primary-color); margin: 15px 0 25px; }
+p { line-height: 1.8; color: var(--text-gray); font-size: 16px; }
+
+/* --- Sliced Image Effect (CRITICAL FIX) --- */
+.sliced-image-container {
+  flex: 1; position: relative;
+  display: flex; flex-direction: column; gap: 8px;
+  min-height: 420px; /* Ensure visibility */
+}
+
+.image-slice {
+  width: 100%; height: 60px;
+  background-size: 100% 600%; /* Force image to stretch over 6 slices */
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.image-slice:hover { transform: translateX(20px); z-index: 5; }
+
+.image-stand-left, .image-stand-right {
+  position: absolute; top: 0; width: 4px; height: 100%;
+  background-color: #eeeeee; z-index: -1;
+}
+.image-stand-left { left: 20%; }
+.image-stand-right { right: 20%; }
+
+/* --- Instagram Section --- */
+.instagram-section {
+  background:  
+              url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070') center/cover fixed;
+  padding: 100px 20px; text-align: center; color: white;
+}
+
+.instagram-icon-wrapper { font-size: 50px; margin-bottom: 20px; }
+.instagram-discover-btn {
+  background: white; color: var(--primary-color);
+  padding: 15px 45px; border: none; border-radius: 30px;
+  font-weight: 800; cursor: pointer; transition: 0.3s; margin-top: 20px;
+}
+.instagram-discover-btn:hover { background: var(--text-dark); color: white; transform: translateY(-5px); }
+
+/* --- Mission List --- */
+.mission-list { list-style: none; padding: 0; margin-top: 30px; }
+.mission-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-weight: 700; color: var(--text-dark); }
+.mission-list svg { color: var(--primary-color); font-size: 20px; }
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .container-custom, .reverse-layout { flex-direction: column; text-align: center; gap: 40px; }
+  .hero-white-overlay { width: 90%; clip-path: none; padding: 0 5%; justify-content: center; }
+  .title-underline { margin: 15px auto 25px; }
+  .top-brand-box { width: 80px; height: 80px; left: 0; }
+  .inner-border { width: 65px; height: 65px; }
+}

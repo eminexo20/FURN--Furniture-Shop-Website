@@ -13,7 +13,7 @@ import Footer from "./components/Footer/Footer"; // Buradadır!
 import ProductDT from "./components/ProductDT/ProductDT";
 import Card from "./components/Card/Card";
 import Catagories from "./components/Catagories/Catagories";
-import BlogDT from "./components/BlogDT/BlogDT";
+
 import { CartProvider } from "./components/CartContext/CartContext";
 
 function Layout() {
@@ -32,7 +32,6 @@ function Layout() {
         <Route path="/about" element={<About />} />
         <Route path="/page" element={<Page />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blogdt" element={<BlogDT />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/account" element={<Login />} />
         <Route path="/product/:id" element={<ProductDT />} />

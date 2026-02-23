@@ -5,10 +5,8 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  // Səbətə məhsul əlavə etmək funksiyası
   const addToCart = (product, quantity) => {
     setCart((prevCart) => {
-      // Məhsul artıq səbətdə var?
       const isExist = prevCart.find((item) => item.id === product.id);
       if (isExist) {
         return prevCart.map((item) =>
@@ -21,11 +19,20 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  // Səbətdəki ümumi məhsul sayını hesabla
+  // Zibil qutusu üçün: Məhsulu tamamilə silir
+  const removeFromCart = (productId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+  };
+
+  // Ödəniş bitəndə səbəti boşaltmaq üçün
+  const clearCart = () => {
+    setCart([]);
+  };
+
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, totalItems }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, totalItems }}>
       {children}
     </CartContext.Provider>
   );

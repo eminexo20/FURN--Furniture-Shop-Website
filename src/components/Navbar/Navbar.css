@@ -4,6 +4,7 @@
   --dropdown-bg: #a48e50;
   --text-dark: #33322f;
   --white: #ffffff;
+  --accent-red: #cc3333; /* Səbət rəqəmi üçün daha vurğulu rəng */
   --transition: all 0.3s ease;
 }
 
@@ -15,12 +16,28 @@
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
+/* İkonu əhatə edən düyməni hədəf alırıq */
+.shop__sort select, /* Əgər select istifadə edirsənsə */
+.search-box button { 
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+}
 
+/* İkonun öz rəngini tənzimləmək üçün */
+.bi-search {
+    color: #1f1b1b; /* İstədiyin tonda tündlük verə bilərsən */
+    font-size: 16px;
+}
 .logo a {
   padding: 8px 15px;
   border: 2px solid var(--white);
@@ -28,6 +45,12 @@
   font-size: 24px;
   font-weight: bold;
   color: var(--white);
+  transition: var(--transition);
+}
+
+.logo a:hover {
+  background: var(--white);
+  color: var(--primary-bg);
 }
 
 .nav-links {
@@ -44,31 +67,31 @@
   color: var(--text-dark);
   font-weight: 500;
   cursor: pointer;
-  font-size: 19px;
+  font-size: 17px; /* Bir az kiçiltdim ki, daha klassik görünsün */
   transition: var(--transition);
 }
 
-/* --- 2. DESKTOP DROPDOWN (Hover Effekti ilə) --- */
-.dropdown {
-  position: relative;
+.nav-links li a:hover {
+  color: var(--white);
 }
+
+/* --- 2. DESKTOP DROPDOWN --- */
+.dropdown { position: relative; }
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   background: var(--dropdown-bg);
-  min-width: 150px;
+  min-width: 170px;
   list-style: none;
-  padding: 0;
+  padding: 10px 0;
   margin: 0;
   border-radius: 4px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  
-  /* Animasiya üçün */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
+  transform: translateY(10px);
   transition: var(--transition);
 }
 
@@ -80,56 +103,86 @@
 
 .dropdown-menu li a {
   color: var(--white);
-  padding: 10px 16px;
-  display: block;
-  text-decoration: none;
-  font-size: 16px;
+  padding: 10px 20px;
+  font-size: 15px;
 }
 
 .dropdown-menu li a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ff6600;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* --- 3. SAĞ ELEMENTLƏR (Search & Cart) --- */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
 
-.search-container { display: flex; align-items: center; }
-.search-input { padding: 6px; border-radius: 4px; border: none; outline: none; margin-right: 10px;}
-.search-button { color: var(--white); background: none; border: none; cursor: pointer; }
+.account-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 14px;
+}
 
-.cart-icon { position: relative; color: var(--white); font-size: 20px; }
+.search-container {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-dark);
+  padding-left: 5px;
+  width: 120px;
+}
+
+.search-input::placeholder { color: rgba(51, 50, 47, 0.7); }
+
+.cart-icon {
+  position: relative;
+  color: var(--text-dark);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+}
+
+/* DÜZƏLİŞ: Səbət rəqəmi stili */
 .cart-count {
   position: absolute;
-  top: -10px;
-  right: -12px;
-  background: #222;
+  top: -8px;
+  right: -10px;
+  background: var(--accent-red);
   color: var(--white);
-  font-size: 11px;
-  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 18px;
+  height: 18px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border: 2px solid var(--primary-bg); /* Arxa fonla qarışmaması üçün kənar xətt */
 }
 
-.hamburger { display: none; color: #63431f; font-size: 28px; cursor: pointer; }
+.hamburger { display: none; cursor: pointer; }
 
-/* --- 4. RESPONSIVE: PLANŞET (992px) --- */
+/* --- 4. RESPONSIVE --- */
 @media (max-width: 992px) {
-  .navbar { padding: 0 20px; }
   .nav-links { gap: 15px; }
-  .nav-links li a { font-size: 16px; }
-  .search-input { width: 120px; }
+  .search-input { width: 80px; }
 }
 
-/* --- 5. RESPONSIVE: MOBİL (768px) --- */
 @media (max-width: 768px) {
   .hamburger { display: block; order: 1; }
   .logo { order: 2; }
-  .nav-right { order: 3; gap: 15px; }
-
+  .nav-right { order: 3; gap: 10px; }
   .account-link, .search-container { display: none; }
 
   .nav-links {
@@ -138,35 +191,21 @@
     left: -100%;
     flex-direction: column;
     background: #c99152;
-    width: 80%;
+    width: 280px;
     height: calc(100vh - 80px);
     transition: 0.4s ease-in-out;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     padding: 30px;
-    gap: 20px;
   }
 
   .nav-links.open { left: 0; }
-
-  /* Mobildə Dropdown fərqli işləməlidir */
-  .dropdown-menu {
+  
+  .dropdown:hover .dropdown-menu {
     position: static;
+    display: block;
     opacity: 1;
     visibility: visible;
     transform: none;
-    background: rgba(0,0,0,0.05);
     box-shadow: none;
-    display: none; /* JS ilə 'open' class-ı veriləndə 'block' ola bilər */
-    padding-left: 15px;
+    background: rgba(0,0,0,0.1);
   }
-
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-}
-
-/* --- 6. RESPONSIVE: TELEFON (480px) --- */
-@media (max-width: 480px) {
-  .logo a { font-size: 18px; padding: 5px 10px; }
-  .nav-links { width: 100%; }
 }

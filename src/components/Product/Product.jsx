@@ -1,93 +1,70 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import './Product.css'
-
-const CATEGORIES = ['Sofa', 'Table', 'Chair', 'Bed', 'Lighting', 'Decor']
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './Product.css';
 
 const Product = () => {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/products')
+    fetch('https://699b9c6d110b5b738cc05dba.mockapi.io/api/products')
       .then(res => res.json())
       .then(data => {
-        setProducts(data)
-        setLoading(false)
-      })
-      .catch(() => setLoading(false))
-  }, [])
+        setProducts(data);
+        setLoading(false);
+      });
+    AOS.init({ duration: 1000 });
+  }, []);
 
-  // AOS init
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true })
-  }, [])
+  if (loading) return <div className="loading-screen">Yüklənir...</div>;
 
   return (
-    <div className="product-page">
-
-      {/* HERO */}
-      <div className="product-hero">
-        <div className="product-hero__overlay"></div>
-        <div className="product-hero__text">
-          <h1>PRODUCTS</h1>
-          <p><Link to="/">Home</Link> › <span>Products</span></p>
+    <div className="product-page-wrapper">
+      
+      {/* 1. SƏHİFƏ BANNERİ */}
+      <section className="product-banner">
+        <div className="banner-overlay">
+          <h1 data-aos="fade-down">OUR COLLECTION</h1>
+          <p data-aos="fade-up">Find the best furniture for your comfort and style.</p>
         </div>
-      </div>
+      </section>
 
-      {/* KATEQORİYA NAVİQASİYASI */}
-      <div className="product-nav">
-        {CATEGORIES.map(cat => (
-          <a key={cat} href={`#${cat}`} className="product-nav__link">{cat}</a>
-        ))}
-      </div>
-
-      {/* TAM KATALOQ */}
-      <div className="product-catalog">
-        {loading ? (
-          <p className="product-loading">Yüklənir...</p>
-        ) : (
-          CATEGORIES.map(cat => {
-            const items = products.filter(p => p.category === cat)
-            if (items.length === 0) return null
-            return (
-              <section key={cat} id={cat} className="catalog-section">
-                <div className="catalog-section__header" data-aos="fade-up">
-                  <h2>{cat}</h2>
-                  <span className="catalog-section__line"></span>
-                  <span className="catalog-section__count">{items.length} items</span>
+      {/* 2. MƏHSULLAR SİYAHISI */}
+      <main className="product-container">
+        <div className="section-header" data-aos="fade-up">
+          <h2>POPULAR PRODUCTS</h2>
+          <div className="header-line"></div>
+          <p>Suspendisse varius enim in eros elementum tristique.</p>
+        </div>
+        
+        <div className="product-grid">
+          {products.map((item, index) => (
+            <div 
+              key={item.id} 
+              className="product-card" 
+              data-aos="fade-up" 
+              data-aos-delay={index * 100}
+            >
+              <Link to={`/product/${item.id}`} className="product-link">
+                <div className="product-card-image">
+                  <img src={item.image} alt={item.title} />
+                  <div className="hover-overlay">
+                    <span>VIEW DETAILS</span>
+                  </div>
                 </div>
-                <div className="catalog-grid">
-                  {items.map(product => (
-                    <Link
-                      to={`/product/${product.id}`}
-                      key={product.id}
-                      className="catalog-card"
-                      data-aos="zoom-in"
-                    >
-                      <div className="catalog-card__img">
-                        <img src={product.image} alt={product.title} />
-                        <div className="catalog-card__overlay">
-                          <span>View Detail</span>
-                        </div>
-                      </div>
-                      <div className="catalog-card__info">
-                        <h3>{product.title}</h3>
-                        <p className="catalog-card__price">${product.price}</p>
-                      </div>
-                    </Link>
-                  ))}
+                <div className="product-info">
+                  <h3 className="product-name">{item.title}</h3>
+                  <p className="product-price">${item.price}</p>
                 </div>
-              </section>
-            )
-          })
-        )}
-      </div>
-
+              </Link>
+            </div>
+          ))}
+        </div>
+      </main>
     </div>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

@@ -1,129 +1,125 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './About.css';
-import hero from "../../assets/hero.png";
-import { FiInstagram } from "react-icons/fi";
+import { FiInstagram, FiCheckCircle } from "react-icons/fi";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const About = () => {
-  const journeyImg = process.env.PUBLIC_URL + '/images/sofa-img2.jpg';
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
+  // Professional Furniture Images from Unsplash
+  const heroImg = "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=2070";
+  const storyImg = "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=2070";
+  const missionImg = "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070";
+
   return (
-    
-    <>
-    <div className="about-wrapper">
-      {/* Sol yuxarıdakı narıncı kvadrat və daxilindəki RN loqosu */}
-      <div className="top-brand-box">
-        <div className="inner-border">
-          <span>FURN</span>
-        </div>
-      </div>
-
-      <header className="about-header">
-        {/* Arxa plandakı şəkil */}
-        <div 
-          className="hero-bg-image" 
-          style={{ backgroundImage: `url(${hero})` }}
-        ></div>
-
-        {/* Şəklin üzərindəki maili kəsilmiş ağ qat */}
-        <div className="hero-white-overlay">
-          <div className="hero-content">
-            <h1>ABOUT</h1>
-            <p className="breadcrumb">
-              <a href="/">Home</a> <span>&gt;</span> About
-            </p>
+    <div className="about-page">
+      {/* --- HERO SECTION --- */}
+      <div className="about-wrapper">
+        <div className="top-brand-box" data-aos="fade-down">
+          <div className="inner-border">
+            <span>FURN</span>
           </div>
         </div>
-      </header>
 
-      {/* Alt hissədəki bej rəngli boşluq/zolaq */}
-      <div className="bottom-accent-bar"></div>
-    </div>
-    
-    <section className="story-section">
-      <div className="story-container">
-        {/* Sol tərəf: Mətnlər */}
-        <div className="story-text">
-          <h2 className="section-title">OUR STORY</h2>
-          
-          <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <br />
-           labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <br /> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <br /> 
-
-           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </p>
-        </div>
-
-        {/* Sağ tərəf: Dilimlənmiş Şəkil Effekti */}
-        <div className="sliced-image-container">
-          {[...Array(6)].map((_, index) => (
-            <div 
-              key={index} 
-              className="image-slice" 
-              style={{ 
-                backgroundImage: `url('/images/table-img1.jpg')`,
-                backgroundPosition: `0 ${index * 20}%` 
-              }}
-            ></div>
-          ))}
-          {/* Arxa tərəfdəki qəhvəyi dayaqlar */}
-          <div className="image-stand-left"></div>
-          <div className="image-stand-right"></div>
-        </div>
-      </div>
-    </section>
-
-    <section className="journey-section">
-      <div className="journey-content">
-        <h2 className="journey-title">JOURNEY START FROM</h2>
-        <p className="journey-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br /> sed do eiusmod 
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim <br />ad minim veniam, 
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-
-        {/* Dilimlənmiş Şəkil Bloku */}
-        <div className="journey-image-container">
-          {[...Array(4)].map((_, index) => (
-            <div 
-            key={index} 
-            className="journey-slice" 
-            style={{ 
-              // DÜZƏLİŞ: url() əlavə edildi
-              backgroundImage: "url('/images/sofa-img3.jpg')", 
-              backgroundPosition: `0 ${index * 33.3}%` 
-            }}
+        <header className="about-header">
+          <div 
+            className="hero-bg-image" 
+            style={{ backgroundImage: `url(${heroImg})` }}
           ></div>
-          ))}
-        </div>
-
-        {/* İl və alt mətn */}
-        <div className="journey-footer">
-          <h2 className="journey-year">2020</h2>
-          <p className="journey-desc">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-            dolore eu fugiat nulla pariatur.
-          </p>
-        </div>
+          <div className="hero-white-overlay" data-aos="fade-right">
+            <div className="hero-content">
+              <h1>ABOUT US</h1>
+              <p className="breadcrumb">
+                <a href="/">Home</a> <span>&gt;</span> About
+              </p>
+            </div>
+          </div>
+        </header>
+        <div className="bottom-accent-bar"></div>
       </div>
-    </section>
+      
+      {/* --- OUR STORY SECTION --- */}
+      <section className="story-section">
+        <div className="container-custom">
+          <div className="story-text" data-aos="fade-up">
+            <h2 className="section-title">OUR STORY</h2>
+            <div className="title-underline"></div>
+            <p>
+              Our journey begins at the intersection of quality and design. 
+              Every piece of furniture is crafted with special care for your comfort. 
+              We blend modern aesthetics with timeless elegance to transform your living spaces.
+            </p>
+          </div>
 
-    <section className="instagram-section" data-aos="fade-up">
+          <div className="sliced-image-container" data-aos="fade-left">
+            <div className="image-stand-left"></div>
+            <div className="image-stand-right"></div>
+            {[...Array(6)].map((_, index) => (
+              <div 
+                key={index} 
+                className="image-slice" 
+                style={{ 
+                  backgroundImage: `url(${storyImg})`,
+                  backgroundPosition: `0 ${(index * 100) / 5}%` // Exact slice calculation
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- INSTAGRAM SECTION --- */}
+      <section className="instagram-section" data-aos="zoom-in">
         <div className="instagram-container">
           <div className="instagram-icon-wrapper">
             <FiInstagram className="instagram-react-icon" />
           </div>
           <div className="instagram-content">
             <h2>GET INSPIRED WITH INSTAGRAM</h2>
-            <p>
-              Suspendisse varius enim in eros elementum tristique. Duis cursus, mi 
-              quis viverra ornare, eros dolor interdum nulla.
-            </p>
-            <button className="instagram-discover-btn">DISCOVER MORE</button>
+            <p>Join our community for the latest interior design trends</p>
+            <button className="instagram-discover-btn">FOLLOW US</button>
           </div>
         </div>
       </section>
-    </>
+
+      {/* --- MISSION SECTION --- */}
+      <section className="mission-section">
+        <div className="container-custom reverse-layout">
+          <div className="sliced-image-container left-side" data-aos="fade-right">
+            <div className="image-stand-left"></div>
+            <div className="image-stand-right"></div>
+            {[...Array(6)].map((_, index) => (
+              <div 
+                key={index} 
+                className="image-slice" 
+                style={{ 
+                  backgroundImage: `url(${missionImg})`,
+                  backgroundPosition: `0 ${(index * 100) / 5}%`
+                }}
+              ></div>
+            ))}
+          </div>
+
+          <div className="mission-text" data-aos="fade-left">
+            <h2 className="section-title">OUR MISSION</h2>
+            <div className="title-underline"></div>
+            <p>
+              Our mission is not just to sell furniture, but to create a peaceful atmosphere in your home. 
+              We prioritize eco-friendly materials and ergonomic shapes.
+            </p>
+            <ul className="mission-list">
+              <li><FiCheckCircle /> Sustainable Wood Materials</li>
+              <li><FiCheckCircle /> Ergonomic Design Philosophy</li>
+              <li><FiCheckCircle /> 10-Year Warranty Guarantee</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
   );
-  
 };
 
 export default About;

@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../../components/CartContext/CartContext"; // Yolun düzgünlüyünü yoxla
+import { useCart } from "../../components/CartContext/CartContext"; 
 import "./Navbar.css";
 
 export default function Navbar() {
-  const { totalItems } = useCart(); // Səbət sayını götürürük
-  const [isOpen, setIsOpen] = useState(false); // Hamburger menyu üçün state
+  const { totalItems } = useCart(); 
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        <Link to="/">FURN</Link>
-      </div>
-
-      {/* Hamburger İkonu */}
+      {/* Hamburger Menu - Mobildə görünür */}
       <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
         <i className={isOpen ? "bi bi-x-lg" : "bi bi-list"}></i>
+      </div>
+
+      <div className="logo">
+        <Link to="/">FURN</Link>
       </div>
 
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
@@ -24,7 +24,7 @@ export default function Navbar() {
         <li><Link to="/about" onClick={() => setIsOpen(false)}>About</Link></li>
 
         <li className="dropdown">
-          <span className="dropdown-toggle">Page</span>
+          <span className="dropdown-toggle">Page <i className="bi bi-chevron-down"></i></span>
           <ul className="dropdown-menu">
             <li><Link to="/account" onClick={() => setIsOpen(false)}>Login</Link></li>
             <li><Link to="/card" onClick={() => setIsOpen(false)}>Cart</Link></li>
@@ -40,12 +40,13 @@ export default function Navbar() {
           <input type="text" placeholder="Search" className="search-input" />
           <button className="search-button"><i className="bi bi-search"></i></button>
         </div>
+        
         <Link to="/account" className="account-link">My Account</Link>
         
-        {/* Səbət İkonu və Dinamik Rəqəm */}
         <Link to="/card" className="cart-icon">
           <i className="bi bi-cart"></i>
-          <span className="cart-count">{totalItems}</span>
+          {/* Səbət boş deyilsə rəqəmi göstər */}
+          {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
         </Link>
       </div>
     </nav>
